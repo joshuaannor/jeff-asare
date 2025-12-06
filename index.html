@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeff Asare – Digital Marketing Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        /* Minimal nav to match site theme */
+        .site-nav { background:#fff; border-bottom:1px solid rgba(0,0,0,0.08); margin:-20px -20px 20px; }
+        .site-nav .nav-inner { max-width:1100px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+        .site-nav .brand { font-weight:bold; letter-spacing:1px; color:#333; }
+        .site-nav .nav-links a { text-decoration:none; color:#333; margin-left:18px; font-size:14px; }
+        .site-nav .nav-links a.active { color:#8b4d43; font-weight:bold; }
+
+        .resume-container {
+            max-width: 8.5in;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            aspect-ratio: 8.5/11;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            height: 280px;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            background: #e8d5d1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .photo-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #d4c0bb;
+            border: 4px solid white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .name-section {
+            flex: 1;
+            background: white;
+            padding: 60px 40px 40px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .profession {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Main Content */
+        .content {
+            display: flex;
+            min-height: calc(100% - 280px);
+        }
+
+        .left-column {
+            width: 280px;
+            background: #8b4d43;
+            color: white;
+            padding: 30px 25px;
+        }
+
+        .right-column {
+            flex: 1;
+            background: white;
+            padding: 30px 40px;
+        }
+
+        /* Left Column Styles */
+        .section-title-left {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 11px;
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            margin-right: 8px;
+            font-size: 12px;
+            margin-top: 1px;
+        }
+
+        .education-item, .skill-item, .language-item {
+            margin-bottom: 15px;
+            font-size: 11px;
+        }
+
+        .institution-name, .skill-name, .language-name {
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .degree, .skill-level {
+            font-size: 10px;
+            margin-bottom: 2px;
+        }
+
+        .dates, .proficiency {
+            font-size: 10px;
+            font-style: italic;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 8px;
+            font-size: 11px;
+        }
+
+        /* Balance dense left-side skills by using two columns on wide screens */
+        .left-column .skills-list {
+            column-count: 2;
+            column-gap: 16px;
+        }
+        .left-column .skills-list li {
+            break-inside: avoid;
+        }
+        /* Force selected skills lists to single column for readability */
+        .left-column .skills-list.one-col {
+            column-count: 1;
+        }
+        /* Subsection spacing for Skills on left */
+        .left-column .section-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+        .left-column .skills-list {
+            margin-bottom: 12px;
+        }
+        .left-column .skills-list li {
+            line-height: 1.45;
+            margin-bottom: 6px;
+        }
+
+        /* Right Column Styles */
+        .section-title-right {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .summary-text {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #333;
+            text-align: left;
+            hyphens: auto;
+            margin-bottom: 25px;
+        }
+
+        .work-item {
+            margin-bottom: 20px;
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .position-company {
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .work-dates {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .work-description {
+            font-size: 10px;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .work-description ul {
+            margin-left: 15px;
+        }
+
+        .work-description li {
+            margin-bottom: 5px;
+        }
+
+        /* Section spacing */
+        .left-section {
+            margin-bottom: 25px;
+        }
+
+        .right-section {
+            margin-bottom: 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resume-container {
+                max-width: 100%;
+                margin: 0;
+            }
+            
+            .header {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .content {
+                flex-direction: column;
+            }
+            
+            .left-column {
+                width: 100%;
+            }
+            /* Collapse skills back to one column on small screens */
+            .left-column .skills-list {
+                column-count: 1;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+            }
+            /* Hide elements that shouldn't appear in print/preview */
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Editable styles */
+        .editable {
+            min-height: 1.2em;
+            outline: none;
+            transition: background-color 0.2s;
+        }
+
+        .editable:focus {
+            background-color: rgba(255, 255, 0, 0.1);
+        }
+
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .upload-text {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Shared navigation -->
+    <nav class="site-nav">
+      <div class="nav-inner">
+        <div class="brand">Jeff Asare</div>
+        <div class="nav-links">
+          <a href="index.html">Resume</a>
+          <a href="https://jeffasaremarketingportfolio.my.canva.site/" target="_blank">Portfolio</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="resume-container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile-photo">
+                <input type="file" id="photoInput" class="file-input" accept="image/*">
+                <div class="upload-text">Click to upload photo</div>
+                <div class="photo-placeholder" id="photoPreview"></div>
+            </div>
+            <div class="name-section">
+                <div class="name editable" contenteditable="true">JEFF ASARE</div>
+                <div class="profession editable" contenteditable="true">Digital Marketing Graduate</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Contact Section -->
+                <div class="left-section">
+                    <div class="section-title-left">CONTACT</div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span class="editable" contenteditable="true">(571) 394-8460</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉</span>
+                        <span class="editable" contenteditable="true">jeffasare31@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span class="editable" contenteditable="true">Stafford, VA · Norfolk, VA</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <span class="editable" contenteditable="true">linkedin.com/in/jjasare</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        <span class="editable" contenteditable="true">jeffasaremarketingportfolio.my.canva.site</span>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="left-section">
+                    <div class="section-title-left">SKILLS</div>
+
+                    <h4 class="section-title">Marketing \& Strategy</h4>
+                    <ul class="skills-list">
+                        <li class="editable">Campaign Strategy \& Execution</li>
+                        <li class="editable">Social Media Strategy</li>
+                        <li class="editable">Market Research \& Analysis</li>
+                        <li class="editable">Customer Engagement</li>
+                        <li class="editable">Event Marketing</li>
+                    </ul>
+
+                    <h4 class="section-title">Tools \& Platforms</h4>
+                    <ul class="skills-list">
+                        <li class="editable">Qualtrics</li>
+                        <li class="editable">Canva</li>
+                        <li class="editable">Microsoft Excel</li>
+                        <li class="editable">Microsoft 365</li>
+                        <li class="editable">Basic Web Design</li>
+                    </ul>
+
+                    <h4 class="section-title">Professional Skills</h4>
+                    <ul class="skills-list one-col">
+                        <li class="editable">Communication</li>
+                        <li class="editable">Collaboration</li>
+                        <li class="editable">Problem-Solving</li>
+                        <li class="editable">Time Management</li>
+                        <li class="editable">Adaptability</li>
+                    </ul>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="left-section">
+                    <div class="section-title-left">LANGUAGES</div>
+                    <div class="language-item">
+                        <div class="language-name editable" contenteditable="true">English</div>
+                        <div class="proficiency editable" contenteditable="true">Fluent</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Summary Section -->
+                <div class="right-section">
+                    <div class="section-title-right">SUMMARY</div>
+                    <div class="summary-text editable" contenteditable="true">
+                        Digital Marketing graduate with hands-on experience in event marketing, customer engagement, and problem-solving in fast-paced environments. Skilled in campaign support, basic web design, and analytics tools like Qualtrics and Excel. Comfortable working with cross-functional teams to deliver smooth operations, clear communication, and positive customer experiences. Seeking entry-level roles in marketing, operations, or digital strategy.
+                    </div>
+                </div>
+
+                <!-- Work Experience Section -->
+                <div class="right-section">
+                    <div class="section-title-right">WORK EXPERIENCE</div>
+
+                    <div class="work-item">
+                        <div class="work-header">
+                            <div class="position-company editable" contenteditable="true">
+                                Marketing Coordinator | Hampton Roads Soccer Complex
+                            </div>
+                            <div class="work-dates editable" contenteditable="true">Jan 2025 – May 2025 · Virginia Beach, VA</div>
+                        </div>
+                        <div class="work-description">
+                            <ul>
+                                <li class="editable" contenteditable="true">Marketed large soccer tournaments with teams traveling from across the United States.</li>
+                                <li class="editable" contenteditable="true">Supported event setup, field layouts, and check-in areas to maintain smooth operations.</li>
+                                <li class="editable" contenteditable="true">Assisted in designing and placing signs to improve communication and wayfinding for attendees.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="work-item">
+                        <div class="work-header">
+                            <div class="position-company editable" contenteditable="true">
+                                Problem Solver (Inbound) | Amazon Fulfillment
+                            </div>
+                            <div class="work-dates editable" contenteditable="true">May 2024 – Aug 2024 · Fredericksburg, VA</div>
+                        </div>
+                        <div class="work-description">
+                            <ul>
+                                <li class="editable" contenteditable="true">Resolved inventory and operational issues in the inbound department by identifying root causes and applying quick fixes.</li>
+                                <li class="editable" contenteditable="true">Collaborated with team members and leadership to meet daily and weekly productivity targets.</li>
+                                <li class="editable" contenteditable="true">Monitored product flow and corrected discrepancies to prevent delays and maintain inventory accuracy.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="work-item">
+                        <div class="work-header">
+                            <div class="position-company editable" contenteditable="true">
+                                Sales Representative | A&amp;J Provisions (AT&amp;T)
+                            </div>
+                            <div class="work-dates editable" contenteditable="true">Nov 2024 – Jan 2025 · McLean, VA</div>
+                        </div>
+                        <div class="work-description">
+                            <ul>
+                                <li class="editable" contenteditable="true">Managed daily customer interactions and explained AT&amp;T phone plans in a clear, friendly way.</li>
+                                <li class="editable" contenteditable="true">Used active listening and problem-solving to address customer hesitations and close sales.</li>
+                                <li class="editable" contenteditable="true">Built relationships through consistent follow-up and professional communication.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="right-section">
+                    <div class="section-title-right">EDUCATION</div>
+                    <div class="education-item">
+                        <div class="institution-name editable" contenteditable="true">Old Dominion University</div>
+                        <div class="degree editable" contenteditable="true">B.S. Digital Marketing</div>
+                        <div class="dates editable" contenteditable="true">Norfolk, VA · May 2025</div>
+                        <div class="degree editable" contenteditable="true">
+                            Projects: ODU Global, ODU LeADERS, Qualtrics Development
+                        </div>
+                        <div class="degree editable" contenteditable="true">
+                            Certifications: Google Analytics, Generative AI
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Involvement Section -->
+                <div class="right-section">
+                    <div class="section-title-right">INVOLVEMENT</div>
+                    <div class="education-item">
+                        <div class="institution-name editable" contenteditable="true">
+                            ODU AMA Strome (Marketing Student Association) – Member
+                        </div>
+                        <div class="dates editable" contenteditable="true">Aug 2024 – Present</div>
+                        <div class="degree editable" contenteditable="true">
+                            Participate in marketing workshops, events, and team-based projects focused on campaigns and strategy.
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="institution-name editable" contenteditable="true">
+                            ODU Developing Men of Color (DMC) – Member
+                        </div>
+                        <div class="dates editable" contenteditable="true">Aug 2024 – Present</div>
+                        <div class="degree editable" contenteditable="true">
+                            Engage in professional development sessions and a supportive community focused on academic and career growth.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Photo upload functionality
+        const photoInput = document.getElementById('photoInput');
+        const photoPreview = document.getElementById('photoPreview');
+
+        photoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    photoPreview.style.backgroundImage = `url(${e.target.result})`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Save content to localStorage
+        function saveContent() {
+            const editableElements = document.querySelectorAll('.editable');
+            const content = {};
+            
+            editableElements.forEach((element, index) => {
+                content[`element_${index}`] = element.innerHTML;
+            });
+            
+            localStorage.setItem('jeff_resume_content', JSON.stringify(content));
+        }
+
+        // Load content from localStorage
+        function loadContent() {
+            const savedContent = localStorage.getItem('jeff_resume_content');
+            if (savedContent) {
+                const content = JSON.parse(savedContent);
+                const editableElements = document.querySelectorAll('.editable');
+                
+                editableElements.forEach((element, index) => {
+                    if (content[`element_${index}`]) {
+                        element.innerHTML = content[`element_${index}`];
+                    }
+                });
+            }
+        }
+
+        // Auto-save functionality
+        document.addEventListener('input', function(e) {
+            if (e.target.classList.contains('editable')) {
+                saveContent();
+            }
+        });
+
+        // Load saved content on page load
+        window.addEventListener('load', loadContent);
+
+        // Print functionality
+        function printResume() {
+            window.print();
+        }
+
+        // Add print button
+        const printButton = document.createElement('button');
+        printButton.innerHTML = 'Print Resume';
+        printButton.className = 'no-print';
+        printButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #8b4d43;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 1000;
+        `;
+        printButton.onclick = printResume;
+        document.body.appendChild(printButton);
+
+        // Highlight active nav link
+        (function(){
+            var links = document.querySelectorAll('.nav-links a');
+            links.forEach(function(a){
+                if (a.getAttribute('href') === 'index.html') a.classList.add('active');
+            });
+        })();
+    </script>
+
+</body>
+</html>
