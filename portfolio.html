@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Asare – Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Times New Roman', serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    /* Shared nav */
+    .site-nav { background:#fff; border-bottom:1px solid rgba(0,0,0,0.08); margin:-20px -20px 20px; }
+    .site-nav .nav-inner { max-width:1100px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; }
+    .site-nav .brand { font-weight:bold; letter-spacing:1px; color:#333; }
+    .site-nav .nav-links a { text-decoration:none; color:#333; margin-left:18px; font-size:14px; }
+    .site-nav .nav-links a.active { color:#8b4d43; font-weight:bold; }
+
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      background:#fff;
+      padding:24px 24px 18px;
+      box-shadow:0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom:20px;
+      border-radius:4px;
+    }
+    .page-title {
+      font-size: 28px;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      color:#333;
+    }
+    .page-subtitle {
+      font-size: 13px;
+      color:#666;
+    }
+
+    .portfolio-grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+      margin-top:20px;
+      margin-bottom:30px;
+    }
+
+    .card {
+      background:#fff;
+      padding:18px 18px 16px;
+      border-radius:4px;
+      box-shadow:0 2px 12px rgba(0,0,0,0.06);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .card-title {
+      font-size:15px;
+      font-weight:bold;
+      margin-bottom:4px;
+      color:#333;
+    }
+    .card-tagline {
+      font-size:11px;
+      font-style:italic;
+      margin-bottom:8px;
+      color:#777;
+    }
+    .card-body {
+      font-size:11px;
+      line-height:1.5;
+      color:#333;
+      margin-bottom:10px;
+    }
+    .card-meta {
+      font-size:10px;
+      color:#777;
+      margin-bottom:8px;
+    }
+    .btn-row {
+      margin-top:auto;
+    }
+    .button-link {
+      display:inline-block;
+      padding:7px 12px;
+      font-size:11px;
+      border-radius:4px;
+      text-decoration:none;
+      border:1px solid #8b4d43;
+      color:#8b4d43;
+      transition:background 0.15s, color 0.15s;
+    }
+    .button-link:hover {
+      background:#8b4d43;
+      color:#fff;
+    }
+
+    .embed-wrapper {
+      background:#fff;
+      margin-top:8px;
+      padding:12px;
+      border-radius:4px;
+      box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    }
+    .embed-title {
+      font-size:13px;
+      font-weight:bold;
+      margin-bottom:6px;
+      color:#333;
+    }
+    .embed-note {
+      font-size:11px;
+      color:#666;
+      margin-bottom:8px;
+    }
+    .portfolio-iframe {
+      width:100%;
+      min-height:480px;
+      border:none;
+      border-radius:4px;
+    }
+
+    @media (max-width: 768px) {
+      body { padding:10px; }
+      .site-nav { margin:-10px -10px 15px; }
+      .page-header { padding:18px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Shared navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="brand">Jeff Asare</div>
+      <div class="nav-links">
+        <a href="index.html">Resume</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-title">Portfolio</div>
+      <div class="page-subtitle">
+        A snapshot of tournaments, campaigns, and projects Jeff has contributed to as a Digital Marketing graduate.
+      </div>
+    </header>
+
+    <!-- High-level featured projects -->
+    <section class="portfolio-grid">
+      <article class="card">
+        <div>
+          <div class="card-title">Hampton Roads Soccer Complex</div>
+          <div class="card-tagline">Tournament Marketing &amp; On-Site Experience</div>
+          <div class="card-body">
+            Supported the marketing of large soccer tournaments with teams traveling from across the U.S.
+            Helped with signage, wayfinding, and event-day coordination to create a smooth experience for players and families.
+          </div>
+          <div class="card-meta">
+            Role: Marketing Coordinator · Jan 2025 – May 2025 · Virginia Beach, VA
+          </div>
+        </div>
+        <div class="btn-row">
+          <span style="font-size:10px;color:#999;">Live photos and assets available on request.</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="card-title">Amazon Inbound Operations</div>
+          <div class="card-tagline">Inventory Problem Solving &amp; Operational Flow</div>
+          <div class="card-body">
+            Diagnosed inventory issues in real time and collaborated with leadership to keep inbound flow on target.
+            Experience here translates into data-driven thinking and attention to detail in campaigns and reporting.
+          </div>
+          <div class="card-meta">
+            Role: Problem Solver · May 2024 – Aug 2024 · Fredericksburg, VA
+          </div>
+        </div>
+        <div class="btn-row">
+          <span style="font-size:10px;color:#999;">Focus: process improvement, accuracy, and time-sensitive decisions.</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="card-title">A&amp;J Provisions (AT&amp;T)</div>
+          <div class="card-tagline">Customer-Facing Sales &amp; Plan Education</div>
+          <div class="card-body">
+            Helped customers understand AT&amp;T phone plans, answered questions, and closed sales through clear explanations and
+            active listening. Strengthened skills in communication, positioning, and objection handling.
+          </div>
+          <div class="card-meta">
+            Role: Sales Representative · Nov 2024 – Jan 2025 · McLean, VA
+          </div>
+        </div>
+        <div class="btn-row">
+          <span style="font-size:10px;color:#999;">Experience that supports marketing, CX, and frontline enablement.</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Embedded Canva portfolio -->
+    <section class="embed-wrapper">
+      <div class="embed-title">Interactive Marketing Portfolio</div>
+      <div class="embed-note">
+        View Jeff’s design samples, layouts, and additional work hosted on Canva.
+      </div>
+      <!-- If Canva allows embedding, this iframe will show it.
+           If not, it will still act as a clickable view in most browsers. -->
+      <iframe
+        class="portfolio-iframe"
+        src="https://jeffasaremarketingportfolio.my.canva.site/"
+        title="Jeff Asare Marketing Portfolio"
+      ></iframe>
+    </section>
+
+  </div>
+
+  <script>
+    // Highlight active nav link
+    (function(){
+      var links = document.querySelectorAll('.nav-links a');
+      links.forEach(function(a){
+        if (a.getAttribute('href') === 'portfolio.html') {
+          a.classList.add('active');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
